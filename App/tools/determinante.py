@@ -1,0 +1,2 @@
+class Determinante(object):
+    pass
