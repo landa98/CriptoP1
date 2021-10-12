@@ -96,7 +96,12 @@ def main():
 
             cripto = vernam.cifrar(columnas.cifrar(afin.cifrar))
             print(f"\nEl mensaje cifrado es: \n{cripto}")
-            io.guardar_cadena(cripto)
+
+            while True:
+                guardado = io.guardar_cadena(cripto)
+                if guardado:
+                    break
+            
             ''''''
 
         elif opcion == '2':
@@ -153,7 +158,12 @@ def main():
 
             mcla = afin.descifrar(columnas.descifrar(vernam.descifrar()))
             print(f"\nEl mensaje descifrado es: \n{mcla}")
-            io.guardar_cadena(mcla)
+
+            while True:
+                guardado = io.guardar_cadena(mcla)
+                if guardado:
+                    break
+            
             ''''''
 
         else:
