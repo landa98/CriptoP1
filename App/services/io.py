@@ -22,7 +22,7 @@ class IO(object):
             with archivo as f:
                 lineas = f.readlines()
             for linea in lineas:
-                cadena += linea.rstrip()
+                cadena += linea.rstrip() + "  "
         except IOError:
             print(f"[ERROR] No se pudo leer el archivo {archivo.name}.")
         else:
