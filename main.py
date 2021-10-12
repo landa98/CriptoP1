@@ -28,8 +28,8 @@ def desea_guardar():
 
 def main():
     io = IO()
-    afin = Afin()
-    columnas = Columnas()
+    afin = Afin(a=2, b=3, n=27)
+    columnas = Columnas(columnas=3)
     vernam = Vernam()
 
     print("*****************************************************")
@@ -52,6 +52,12 @@ def main():
             contenido = io.archivo_a_cadena(archivo)
             print(f"\nEl mensaje en claro es: \n{contenido}")
             
+            '''
+            Se solicitó cifrar de manera secuencial,
+            sin posibilidad de que el usuario elija
+            
+            Descomentar código para activar menú
+
             cifrado = menu_cifrados()
             
             if cifrado == '1':
@@ -60,10 +66,38 @@ def main():
                 cripto = columnas.cifrar(contenido)
             elif cifrado == '3':
                 cripto = vernam.cifrar(contenido)
+            
+            print(f"\nEl mensaje cifrado es: \n{cripto}")
 
             if cripto != "":
                 if desea_guardar():
                     io.guardar_cadena(cripto)
+
+            '''
+
+            ''''''
+            print("Introduzca parámetros para Cifrado Afín")
+
+            a = input("a: ")
+            b = input("b: ")
+            n = input("n [26) Alfabeto inglés 27) Alfabeto español]: ")
+
+            columnas = input("Introduzca número de columnas para Cifrado por Columnas: ")
+
+            k = input("Introduzca llave para cifrado Vernam: ")
+
+            afin.set_a(a)
+            afin.set_b(b)
+            afin.set_n(n)
+
+            columnas.set_columnas(columnas)
+
+            vernam.set_k(k)
+
+            cripto = vernam.cifrar(columnas.cifrar(afin.cifrar))
+            print(f"\nEl mensaje cifrado es: \n{cripto}")
+            io.guardar_cadena(cripto)
+            ''''''
 
         elif opcion == '2':
             mcla = ""
@@ -73,7 +107,14 @@ def main():
                 if archivo:
                     break
             contenido = io.archivo_a_cadena(archivo)
+            print(f"\nEl mensaje cifrado es: \n{contenido}")
+
+            '''
+            Se solicitó descifrar de manera secuencial,
+            sin posibilidad de que el usuario elija
             
+            Descomentar código para activar menú
+
             cifrado = menu_cifrados()
             
             if cifrado == '1':
@@ -83,9 +124,37 @@ def main():
             elif cifrado == '3':
                 mcla = vernam.descifrar(contenido)
             
+            print(f"\nEl mensaje descifrado es: \n{mcla}")
+
             if mcla != "":
                 if desea_guardar():
                     io.guardar_cadena(mcla)
+
+            '''
+
+            ''''''
+            print("Introduzca parámetros para Cifrado Afín")
+
+            a = input("a: ")
+            b = input("b: ")
+            n = input("n [26) Alfabeto inglés 27) Alfabeto español]: ")
+
+            columnas = input("Introduzca número de columnas para Cifrado por Columnas: ")
+
+            k = input("Introduzca llave para cifrado Vernam: ")
+
+            afin.set_a(a)
+            afin.set_b(b)
+            afin.set_n(n)
+
+            columnas.set_columnas(columnas)
+
+            vernam.set_k(k)
+
+            mcla = afin.descifrar(columnas.descifrar(vernam.descifrar()))
+            print(f"\nEl mensaje descifrado es: \n{mcla}")
+            io.guardar_cadena(mcla)
+            ''''''
 
         else:
             print(f"\nTerminando ejecución\n")

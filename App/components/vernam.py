@@ -1,9 +1,15 @@
 class Vernam(object):
-    def __init__(self):
+    def __init__(self, k = "contrasena"):
+        self._k = k
+
+    def get_k(self):
+        return self._k
+
+    def set_k(self, k):
+        self._k = k
+
+    def cifrar(self, cadena):
         pass
 
-    def cifrar(self):
-        pass
-
-    def descifrar(self):
+    def descifrar(self, cadena):
         pass
