@@ -82,7 +82,7 @@ def main():
             b = input("b: ")
             n = input("n [26) Alfabeto inglés 27) Alfabeto español]: ")
 
-            columnas = input("Introduzca número de columnas para Cifrado por Columnas: ")
+            cols = input("Introduzca número de columnas para Cifrado por Columnas: ")
 
             k = input("Introduzca llave para cifrado Vernam: ")
 
@@ -90,7 +90,7 @@ def main():
             afin.set_b(b)
             afin.set_n(n)
 
-            columnas.set_columnas(columnas)
+            columnas.set_columnas(cols)
 
             vernam.set_k(k)
 
@@ -139,7 +139,7 @@ def main():
             b = input("b: ")
             n = input("n [26) Alfabeto inglés 27) Alfabeto español]: ")
 
-            columnas = input("Introduzca número de columnas para Cifrado por Columnas: ")
+            cols = input("Introduzca número de columnas para Cifrado por Columnas: ")
 
             k = input("Introduzca llave para cifrado Vernam: ")
 
@@ -147,7 +147,7 @@ def main():
             afin.set_b(b)
             afin.set_n(n)
 
-            columnas.set_columnas(columnas)
+            columnas.set_columnas(cols)
 
             vernam.set_k(k)
 

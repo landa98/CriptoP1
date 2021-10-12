@@ -9,7 +9,9 @@ class Vernam(object):
         self._k = k
 
     def cifrar(self, cadena):
-        pass
+        cripto = cadena
+        return cripto
 
     def descifrar(self, cadena):
-        pass
+        mcla = cadena
+        return mcla

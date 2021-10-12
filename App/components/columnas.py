@@ -9,7 +9,9 @@ class Columnas(object):
         self._columnas = columnas
 
     def cifrar(self, cadena):
-        pass
+        cripto = cadena
+        return cripto
 
     def descifrar(self, cadena):
-        pass
+        mcla = cadena
+        return mcla
