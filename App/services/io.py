@@ -1,7 +1,6 @@
 class IO(object):
 
-    @classmethod
-    def abrir_archivo(ruta):
+    def abrir_archivo(self):
         '''
         Wrapper para apertura de archivo
         '''
@@ -11,10 +10,10 @@ class IO(object):
         except IOError:
             print(f"[ERROR] No se ha encontrado el archivo {ruta}.")
         else:
+            print(f"[OK] Archivo abierto con éxito.")
             return archivo
     
-    @classmethod
-    def archivo_a_cadena(archivo):
+    def archivo_a_cadena(self, archivo):
         '''
         Extrae el contenido de un objeto File
         '''
@@ -30,8 +29,7 @@ class IO(object):
             return cadena
 
 
-    @classmethod
-    def guardar_cadena(ruta, cadena):
+    def guardar_cadena(self, ruta, cadena):
         '''
         Wrapper para escritura de archivo
         '''
