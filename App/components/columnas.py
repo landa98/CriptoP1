@@ -62,6 +62,9 @@ class Columnas(object):
             listatrans2.append(listatrans[indice]) 
         lista2=transpuesta(listatrans2)         
         mcla = reconstruccion(lista2)
+        while mcla[len(mcla)-1]=='x':
+            print(mcla)
+            mcla=mcla[0:len(mcla)-1]
         return mcla
 
 def transpuesta(lista):
