@@ -1,8 +1,8 @@
 class Afin(object):
     def __init__(self, a=1, b=0, n=27):
-        self._a = a
-        self._b = b
-        self._n = n
+        self._a = int(a)
+        self._b = int(b)
+        self._n = int(n)
         if self._n == 27:
             self._alfabeto = "ABCDEFGHIJKLMNÑOPQRSTUVWXYZ"
         elif self._n == 26:
@@ -21,13 +21,13 @@ class Afin(object):
         return self._n
 
     def set_a(self, a):
-        self._a = a
+        self._a = int(a)
     
     def set_b(self, b):
-        self._b = b
+        self._b = int(b)
 
     def set_n(self, n):
-        self._n = n
+        self._n = int(n)
 
     def cifrar(self, cadena):
         cripto = ""
@@ -50,26 +50,30 @@ class Afin(object):
             #print("\nEn el indice {} tenemos a '{}'".format(indice, caracter))
             
             #Obteniendo Mi (equivalente con el alfabeto)
-            for posicion in range(len(self._alfabeto)):
-            	if (caracter == self._alfabeto[posicion]):
-             		#print("{} = {}".format(mi, posicion))
+            if caracter == " ":
+                cripto_i = " "
+            else:
+                for posicion in range(len(self._alfabeto)):
+                    if (caracter == self._alfabeto[posicion]):
+                        #print("{} = {}".format(mi, posicion))
 
-             		num = int(posicion)
+                        num = int(posicion)
 
-             		#Cálculo de Ci = (Mi*a + b) mod n
+                        #Cálculo de Ci = (Mi*a + b) mod n
 
-             		#Se castea para convertir los parámetros recibidos (str) a int
+                        #Se castea para convertir los parámetros recibidos (str) a int
 
-             		#a = int(a)
-             		#b = int(b)
+                        #a = int(a)
+                        #b = int(b)
 
-             		ci = ((num*self._a + self._b) % self._n)
-             		#print("ci = ", ci)
+                        ci = ((num*self._a + self._b) % self._n)
+                        #print("ci = ", ci)
 
-             		#Obteniendo Ci a su equivalente para obtener el Cripto 
-             		cripto_i = self._alfabeto[ci]
+                        #Obteniendo Ci a su equivalente para obtener el Cripto 
+                        cripto_i = self._alfabeto[ci]
             cripto += cripto_i
         print("\nEl mensaje cifrado es: ",cripto)
+        return cripto
 
     def descifrar(self, cadena):
         mcla = ""
@@ -113,24 +117,27 @@ class Afin(object):
             #print("\nEn el indice {} tenemos a '{}'".format(indice, caracter))
             
             #Obteniendo Mi (equivalente con el alfabeto)
-            for posicion in range(len(self._alfabeto)):
-            	if (caracter == self._alfabeto[posicion]):
-             		#print("{} = {}".format(mi, posicion))
+            if caracter == " ":
+                mcla_i = " "
+            else:
+                for posicion in range(len(self._alfabeto)):
+                    if (caracter == self._alfabeto[posicion]):
+                        #print("{} = {}".format(mi, posicion))
 
-             		num = int(posicion)
+                        num = int(posicion)
 
-             		#Cálculo de Ci = (Mi*a + b) mod n
+                        #Cálculo de Ci = (Mi*a + b) mod n
 
-             		#Se castea para convertir los parámetros recibidos (str) a int
+                        #Se castea para convertir los parámetros recibidos (str) a int
 
-             		#a = int(a)
-             		#b = int(b)
+                        #a = int(a)
+                        #b = int(b)
 
-             		mi = (((num - self._b) * a_inversa) % self._n)
-             		#print("mi = ", mi)
+                        mi = (((num - self._b) * a_inversa) % self._n)
+                        #print("mi = ", mi)
 
-             		#Obteniendo mi a su equivalente para obtener el Mcla 
-             		mcla_i = self._alfabeto[mi]
+                        #Obteniendo mi a su equivalente para obtener el Mcla 
+                        mcla_i = self._alfabeto[mi]
             mcla += mcla_i
         print("\nEl mensaje descifrado es: ",mcla)
         return mcla
