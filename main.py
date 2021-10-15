@@ -77,7 +77,11 @@ def main():
 
             ''''''
             print("Prueba:")
-            columnas.cifrar("clave","pruebadecodigo")
+            print(columnas.descifrar("clave","upbreeaodcgdxio"))
+
+
+
+
             print("Introduzca parámetros para Cifrado Afín")
 
             a = input("a: ")

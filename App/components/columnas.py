@@ -44,21 +44,25 @@ class Columnas(object):
         print(cripto)
         return cripto
 
-    def descifrar(self, cadena):
-        mcla = cadena
+    def descifrar(self, key, cripto):
+        key_sort = sorted(key)
+        long_key=len(key)
+        long_cripto=len(cripto)
+        Lista_aux=[]
+        aux=int(long_cripto/long_key)
+        for i in range(aux):
+            Lista_aux.append([])
+        for i in range(aux):
+            for j in range(long_key):
+                Lista_aux[i].append(cripto[(i*long_key)+j])
+        listatrans=transpuesta(Lista_aux)
+        listatrans2=[]
+        for i in range(long_key):
+            indice=key_sort.index(key[i])
+            listatrans2.append(listatrans[indice]) 
+        lista2=transpuesta(listatrans2)         
+        mcla = reconstruccion(lista2)
         return mcla
-
-    '''
-    def transpuesta(self, lista):
-        long_hor=len(lista[0])
-        long_ver=len(lista)
-        lista_trans=[]
-        for i in range(long_hor):
-            for j in range(long_ver):
-                lista_trans[i][j].append(lista[j][i])
-        return lista_trans   '''
-
-    
 
 def transpuesta(lista):
     long_hor=len(lista[0])
