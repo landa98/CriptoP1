@@ -76,13 +76,15 @@ def main():
             '''
 
             ''''''
+            print("Prueba:")
+            columnas.cifrar("clave","pruebadecodigo")
             print("Introduzca parámetros para Cifrado Afín")
 
             a = input("a: ")
             b = input("b: ")
             n = input("n [26) Alfabeto inglés 27) Alfabeto español]: ")
 
-            cols = input("Introduzca número de columnas para Cifrado por Columnas: ")
+            cols = input("Introduzca palabra clave para Cifrado por Columnas: ")
 
             k = input("Introduzca llave para cifrado Vernam: ")
 
