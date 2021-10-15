@@ -1,3 +1,9 @@
+# Proyecto 1 - Criptografía - Grupo 3
+# Prof.ª: Ing. Magdalena Reyes Granados
+# Equipo 11 - Integrantes:
+# González Sánchez Rodrigo
+# Landázuri Brambila Álvaro Ulises
+# Lona Reveles Iván
 from App.components.afin import Afin
 from App.components.columnas import Columnas
 from App.components.vernam import Vernam
@@ -36,7 +42,9 @@ def main():
     print("Proyecto de Criptografía - Equipo 11")
     print("Grupo 3 - Prof.ª: Ing. Magdalena Reyes Granados")
     print(f"\nIntegrantes:\
-        \nNombres")
+        \nGonzález Sánchez Rodrigo\
+        \nLandázuri Brambila Álvaro Ulises\
+        \nLona Reveles Iván")
     print("*****************************************************")
 
     while True:
