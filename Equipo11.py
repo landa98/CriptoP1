@@ -84,8 +84,7 @@ def main():
             '''
 
             ''''''
-            #print("Prueba:")
-            #print(columnas.descifrar("clave","upbreeaodcgdxio"))
+
 
 
 
@@ -104,7 +103,6 @@ def main():
             afin.set_b(b)
             afin.set_n(n)
 
-            #columnas.set_columnas(cols)
 
             vernam.set_k(k)
 
@@ -166,7 +164,6 @@ def main():
             afin.set_b(b)
             afin.set_n(n)
 
-            #columnas.set_columnas(cols)
 
             vernam.set_k(k)
 
