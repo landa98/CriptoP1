@@ -29,7 +29,7 @@ def desea_guardar():
 def main():
     io = IO()
     afin = Afin(a=2, b=3, n=27)
-    columnas = Columnas(columnas=3)
+    columnas = Columnas()
     vernam = Vernam()
 
     print("*****************************************************")
@@ -76,8 +76,8 @@ def main():
             '''
 
             ''''''
-            print("Prueba:")
-            print(columnas.descifrar("clave","upbreeaodcgdxio"))
+            #print("Prueba:")
+            #print(columnas.descifrar("clave","upbreeaodcgdxio"))
 
 
 
@@ -96,11 +96,11 @@ def main():
             afin.set_b(b)
             afin.set_n(n)
 
-            columnas.set_columnas(cols)
+            #columnas.set_columnas(cols)
 
             vernam.set_k(k)
 
-            cripto = vernam.cifrar(columnas.cifrar(afin.cifrar))
+            cripto = vernam.cifrar(columnas.cifrar(cols, afin.cifrar(contenido)))
             print(f"\nEl mensaje cifrado es: \n{cripto}")
 
             while True:
@@ -150,7 +150,7 @@ def main():
             b = input("b: ")
             n = input("n [26) Alfabeto inglés 27) Alfabeto español]: ")
 
-            cols = input("Introduzca número de columnas para Cifrado por Columnas: ")
+            cols = input("Introduzca palabra clave para Cifrado por Columnas: ")
 
             k = input("Introduzca llave para cifrado Vernam: ")
 
@@ -158,11 +158,11 @@ def main():
             afin.set_b(b)
             afin.set_n(n)
 
-            columnas.set_columnas(cols)
+            #columnas.set_columnas(cols)
 
             vernam.set_k(k)
 
-            mcla = afin.descifrar(columnas.descifrar(vernam.descifrar()))
+            mcla = afin.descifrar(columnas.descifrar(cols, vernam.descifrar(contenido)))
             print(f"\nEl mensaje descifrado es: \n{mcla}")
 
             while True:
