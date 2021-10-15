@@ -1,2 +1,0 @@
-class Determinante(object):
-    pass
